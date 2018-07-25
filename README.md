@@ -35,8 +35,11 @@ Default to `1.0.0`
  The `ern publish-container` CLI command can be used as follow to manually publish a Container using the jcenter publisher :
 
 ```bash
-$ ern publish-container --containerPath [pathToContainer] -p jcenter -v [containerVersion] --platform android -c '{"artifactId":"[artifactId]", "groupId":"[groupId]"}'
+$ ern publish-container --containerPath [pathToContainer] -p jcenter -v [containerVersion] --platform android -e '{"artifactId":"[artifactId]", "groupId":"[groupId]"}'
 ```  
+
+Instead of passing the whole configuration on the command line for `--extra/-e`, it is also possible to use a file path to a json file holding the configuration, or a path to a file stored in the Cauldron. Check out the [ern publish-container](https://native.electrode.io/cli-commands/publish-container) command documentation for more info.
+
 
 ### **With Cauldron**
 
@@ -55,8 +58,10 @@ $ ern publish-container --containerPath [pathToContainer] -p jcenter -v [contain
 To automatically publish Cauldron generated Containers of a target native application and platform, the `ern cauldron add publisher` command can be used as follow :
 
 ```bash
-$ ern cauldron add publisher -p jcenter -c '{"artifactId":"[artifactId]", "groupId":"[groupId]"}'
+$ ern cauldron add publisher -p jcenter -e '{"artifactId":"[artifactId]", "groupId":"[groupId]"}'
 ```
+
+Instead of passing the whole configuration on the command line for `--extra/-e`, it is also possible to use a file path to a json file holding the configuration, or a path to a file stored in the Cauldron. Check out the [ern cauldron add-publisher](https://native.electrode.io/cli-commands/cauldron/add-publisher) command documentation for more info.
 
 This will result in the following publisher entry in Cauldron :
 
