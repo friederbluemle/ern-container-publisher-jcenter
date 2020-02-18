@@ -58,7 +58,7 @@ export default class JcenterPublisher implements ContainerPublisher {
       from android.sourceSets.main.java.srcDirs
       include '**/*.java'
     }
-    
+
     artifacts {
         archives androidSourcesJar
     }

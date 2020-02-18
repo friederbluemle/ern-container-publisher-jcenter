@@ -11,7 +11,12 @@
   "bugs": {
     "url": "https://github.com/electrode-io/ern-container-publisher-jcenter/issues"
   },
-  "keywords": ["electrode", "ern", "react-native", "ern-container-publisher"],
+  "keywords": [
+    "electrode",
+    "ern",
+    "react-native",
+    "ern-container-publisher"
+  ],
   "contributors": [
     {
       "name": "Benoit Lemaire",
@@ -40,7 +45,7 @@
     "ern-container-publisher": "0.21.0",
     "ern-core": "0.21.0"
   },
-  "devDependencies": {    
+  "devDependencies": {
     "@types/chai": "^4.1.4",
     "@types/mocha": "^5.2.4",
     "@types/node": "^9.6.7",
