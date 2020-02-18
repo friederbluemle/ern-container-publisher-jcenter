@@ -6,16 +6,16 @@ You must have a [Bintray](https://bintray.com) account in order to use this publ
 
 ## Usage
 
-Independently of the method used, the following parameters will be retrieved from your global `~/.gradle/gradle.properties` file. You must have matching variable names defined in this file. They are all required.
+Independent of the method used, the following parameters will be retrieved from your global `~/.gradle/gradle.properties` file. You must have matching variable names defined in this file. They are all required.
 
 - `bintrayUser` : The Bintray account username [*]
 - `bintrayApiKey`: The Bintray account API key [*]
-- `bintrayRepo` : The Bintray repository [*] 
+- `bintrayRepo` : The Bintray repository [*]
 - `bintrayVcsUrl` : The Bintray VCS url [*]
 
-### **With `ern publish-container` CLI command**
+### With `ern publish-container` CLI command
 
-**Required**
+#### Required
 
 - `--containerVersion/-v` : Version of the Container to publish
 - `--publisher/-p` : `jcenter`
@@ -24,41 +24,40 @@ Independently of the method used, the following parameters will be retrieved fro
   - `artifactId` : The artifact id to be used for the Container
   - `groupId` : The group id to be used for the Container
 
-**Optional**
+#### Optional
 
-- `--containerPath` : Path to the Container to publish.  
+- `--containerPath` : Path to the Container to publish.\
 Defaults to the Electrode Native default Container Generation path (`~/.ern/containergen/out/[platform]` if not changed through config)
 
-- `--containerVersion/-v` : Version of the Container to publish.  
+- `--containerVersion/-v` : Version of the Container to publish.\
 Default to `1.0.0`
 
- The `ern publish-container` CLI command can be used as follow to manually publish a Container using the jcenter publisher :
+The `ern publish-container` CLI command can be used as follow to manually publish a Container using the jcenter publisher :
 
-```bash
-$ ern publish-container --containerPath [pathToContainer] -p jcenter -v [containerVersion] --platform android -e '{"artifactId":"[artifactId]", "groupId":"[groupId]"}'
-```  
+```sh
+ern publish-container --containerPath [pathToContainer] -p jcenter -v [containerVersion] --platform android -e '{"artifactId":"[artifactId]", "groupId":"[groupId]"}'
+```
 
 Instead of passing the whole configuration on the command line for `--extra/-e`, it is also possible to use a file path to a json file holding the configuration, or a path to a file stored in the Cauldron. Check out the [ern publish-container](https://native.electrode.io/cli-commands/publish-container) command documentation for more info.
 
+### With Cauldron
 
-### **With Cauldron**
-
-**Required**
+#### Required
 
 - `--publisher/-p` : `jcenter`
 
-**Optional**
+#### Optional
 
 - `--config/-c` : A json string (or path to a json file) containing the following required properties:
-  - `artifactId` : The artifact id to be used for the Container  
-  Defaults to `[nativeAppName]-ern-container`
-  - `groupId` : The group id to be used for the Container  
-  Defaults to `com.walmartlabs.ern`
+  - `artifactId` : The artifact id to be used for the Container\
+Defaults to `[nativeAppName]-ern-container`
+  - `groupId` : The group id to be used for the Container\
+Defaults to `com.walmartlabs.ern`
 
 To automatically publish Cauldron generated Containers of a target native application and platform, the `ern cauldron add publisher` command can be used as follow :
 
-```bash
-$ ern cauldron add publisher -p jcenter -e '{"artifactId":"[artifactId]", "groupId":"[groupId]"}'
+```sh
+ern cauldron add publisher -p jcenter -e '{"artifactId":"[artifactId]", "groupId":"[groupId]"}'
 ```
 
 Instead of passing the whole configuration on the command line for `--extra/-e`, it is also possible to use a file path to a json file holding the configuration, or a path to a file stored in the Cauldron. Check out the [ern cauldron add-publisher](https://native.electrode.io/cli-commands/cauldron/add-publisher) command documentation for more info.
@@ -77,7 +76,7 @@ This will result in the following publisher entry in Cauldron :
 
 This is only needed once. Once the configuration for the publisher is stored in Cauldron, any new Cauldron generated Container will be publihsed to jcenter.
 
-### **Programatically**
+### Programmatically
 
 ```js
 import JCenterPublisher from 'ern-container-publisher-jcenter'
